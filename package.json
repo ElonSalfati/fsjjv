@@ -1,0 +1,29 @@
+{
+  "name": "fsjjv",
+  "version": "0.0.1",
+  "description": "JJV extended to firestore useage",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElonSalfati/fsjjv.git"
+  },
+  "keywords": [
+    "JJV",
+    "JSON",
+    "Schema",
+    "Firestore"
+  ],
+  "author": "Elon Salfati <elon@salfati.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ElonSalfati/fsjjv/issues"
+  },
+  "homepage": "https://github.com/ElonSalfati/fsjjv#readme",
+  "dependencies": {
+    "@google-cloud/firestore": "^2.6.0",
+    "jjv": "^1.0.2"
+  }
+}
