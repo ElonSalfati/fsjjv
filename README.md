@@ -2,14 +2,19 @@
 
 FSJJV is an extention of JJV designed to support DocumentReferences from firestore.
 
-Options
+### Installation
+```shell
+npm install git+https://github.com/ElonSalfati/fsjjv.git
+```
+
+### Options
 ```javascript
 const options = {
   schemaPath: "<path to schema file>"
 }
 ```
 
-Schema File
+### Schema File
 ```json
 {
   "schema_name": {
