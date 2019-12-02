@@ -1,7 +1,5 @@
 const jjv = require("jjv")
-const Firestore = require("@google-cloud/firestore")
-
-const firestore = new Firestore()
+const firebase = require("firebase-admin")
 
 /**
  * Check if the given string v is a valid
@@ -20,9 +18,21 @@ const isDocPath = (v) => (
  * Load fsjjv instance.
  *
  * @param {object} options - Options.
+ * @param {string} options.serviceAccount - Firestore service account path.
+ * @param {string} options.projectId - Project ID name.
+ * @param {string} options.schemaPath - Path to schema.
  * @returns {jjv}
  */
 module.exports = (options) => {
+
+  // Init firestore app
+  const sa = require(options.serviceAccount)
+  firebase.initializeApp({
+    credential: firebase.credential.cert(sa),
+    databaseURL: `https://${options.projectId}.firebaseio.com`
+  })
+  const firestore = firebase.firestore()
+
   // Create new JJV env
   const env = jjv()
 
@@ -36,7 +46,7 @@ module.exports = (options) => {
   env.addType("Date", (v) => ((v || {}).constructor === Date))
 
   // Define DocumentReference type
-  env.addType("DocumentReference", (v) => ((v || {}).constructor === Firestore.DocumentReference || isDocPath(v)))
+  env.addType("DocumentReference", (v) => ((v || {}).constructor === firebase.firestore.DocumentReference || isDocPath(v)))
 
   // Convert all valid document path into document references
   env.addTypeCoercion("DocumentReference", (v) => {
