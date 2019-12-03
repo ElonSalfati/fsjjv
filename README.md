@@ -33,7 +33,8 @@ const errors = validator.validate("schema_name", { "object": "to_test" })
 ### Options
 ```javascript
 const options = {
-  schemaPath: "<path to schema file>"
+  schemaPath: "<path to schema file>",
+  fs: "<Firestore instance>"
 }
 ```
 
