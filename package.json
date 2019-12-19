@@ -1,5 +1,5 @@
 {
-  "name": "@elonsalfati/fsjjv",
+  "name": "fsjjv",
   "version": "0.0.1",
   "description": "JJV extended to firestore useage",
   "main": "src/index.js",
@@ -10,9 +10,6 @@
     "Schema",
     "Firestore"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/ElonSalfati"
-  },
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/ElonSalfati/fsjjv.git"
