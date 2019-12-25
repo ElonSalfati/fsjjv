@@ -4,7 +4,7 @@ FSJJV is an extention of JJV designed to support DocumentReferences from firesto
 
 ### Installation
 ```shell
-npm install git+https://github.com/ElonSalfati/fsjjv.git
+npm install fsjjv
 ```
 
 ### Usage
