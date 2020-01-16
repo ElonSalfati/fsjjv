@@ -34,7 +34,10 @@ module.exports = (options) => {
   env.defaultOptions.removeAdditional = true
 
   // Add date type
-  env.addType("Date", (v) => ((v || {}).constructor === Date))
+  env.addType("Date", (v) => ((v || {}).constructor === String))
+
+  // Convert string date to date
+  env.addTypeCoercion("Date", (v) => new Date(v))
 
   // Define DocumentReference type
   env.addType("DocumentReference", (v) => ((v || {}).constructor.name === "DocumentReference" || isDocPath(v, options)))
