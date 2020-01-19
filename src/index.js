@@ -34,7 +34,7 @@ module.exports = (options) => {
   env.defaultOptions.removeAdditional = true
 
   // Add date type
-  env.addType("Date", (v) => (v instanceof Date && !isNaN(v))
+  env.addType("Date", (v) => (v instanceof Date && !isNaN(v)))
 
   // Convert string date to date
   env.addTypeCoercion("Date", (v) => new Date(v))
