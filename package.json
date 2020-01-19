@@ -1,6 +1,6 @@
 {
   "name": "fsjjv",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "JJV extended to firestore useage",
   "main": "src/index.js",
   "scripts": {},
