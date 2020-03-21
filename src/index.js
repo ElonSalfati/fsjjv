@@ -49,9 +49,13 @@ module.exports = (options) => {
   })
 
   // Register schemas
-  const schemas = require(options.schemaPath)
-  for (let [name, schema] of Object.entries(schemas)) {
-    env.addSchema(name, schema)
+  if (options.schemaPath.constructor === String) options.schemaPath = [options.schemaPath]
+
+  for (const path of options.schemaPath) {
+    const schemas = require(path)
+    for (let [name, schema] of Object.entries(schemas)) {
+      env.addSchema(name, schema)
+    }
   }
 
   return env
